@@ -57,6 +57,8 @@ Contents
    architecture
    data
 
+   contextual_views
+
    changes
    contributing
 

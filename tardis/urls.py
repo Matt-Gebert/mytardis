@@ -270,3 +270,10 @@ urlpatterns = patterns(
 # Handle static files from /static
 urlpatterns += staticfiles_urlpatterns()
 
+if settings.DEBUG:
+    from os import path
+    urlpatterns += patterns('',
+        url(r'^docs/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': path.abspath(path.join(path.dirname(__file__),'..',"docs/html/")),
+        }),
+   )
